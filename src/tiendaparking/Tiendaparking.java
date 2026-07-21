@@ -1,34 +1,50 @@
-
 package tiendaparking;
 
 import Modelo.CarroModelo;
 import Modelo.ChoferModelo;
+import Modelo.MotorModelo;
+import Modelo.PasajeroModelo;
 
-
+/**
+ * Punto de entrada principal de la aplicación TiendaParking.
+ */
 public class Tiendaparking {
 
     public static void main(String[] args) {
-        // codigo principal --> ejecutar todo...
         
-        ChoferModelo obj_chofer = new ChoferModelo("Andres" , "Vargas" , "1093298257");
-        ChoferModelo obj_chofer2 = new ChoferModelo("Juan" , "Perez" , "1093298256");
+        // Sincronización y uso del Conductor (ChoferModelo)
+        ChoferModelo chofer = new ChoferModelo("Carlos", "Gomez", "1122334455");
+        chofer.setNombre_chofer("Andres");
+
+        String nombreChofer = chofer.getNombre_chofer();
+        System.out.println("Nombre chofer: " + nombreChofer);
         
-        obj_chofer.setNombre_chofer("Pedro");
-        obj_chofer2.setCedula_chofer("10393433");
-        
-        String dato_nombre = obj_chofer.getNombre_chofer();
-        System.out.println("nombre chofer: " + dato_nombre);
-        
-        
-        CarroModelo obj_carro = new CarroModelo("Audi" , "Negro" , "IFO59E");
-        
-        obj_carro.setMarca_carro("Toyota");
-        
-        String dato_marca = obj_carro.getMarca_carro();
-        System.out.println("marca auto: " + dato_marca);
-        
-        
-        
+        // Sincronización y uso del Vehículo (CarroModelo)
+        CarroModelo carro = new CarroModelo("Mustang", "Negro", "XJH-1010");
+        carro.setPlaca_carro("XJH-1010");
+
+        String placaVehiculo = carro.getPlaca_carro();
+        System.out.println("Placa carro: " + placaVehiculo);
+
+        // Sincronización y uso del Motor (MotorModelo)
+        MotorModelo motor = new MotorModelo("SN-987654", "Eléctrico");
+        motor.setTipo_motor("Eléctrico");
+
+        String tipoDeMotor = motor.getTipo_motor();
+        System.out.println("Tipo de motor: " + tipoDeMotor);
+
+        String serialMotor = motor.getNserie_motor();
+        System.out.println("Numero de serie del motor: " + serialMotor);
+
+        // Sincronización y uso del Pasajero (PasajeroModelo)
+        PasajeroModelo pasajero = new PasajeroModelo("99887755", "Jose Vera");
+        pasajero.setNombrec_pasajero("Andres Vera");
+
+        String nombrePasajero = pasajero.getNombrec_pasajero();
+        System.out.println("Nombre pasajero: " + nombrePasajero);
+
+        String cedulaPasajero = pasajero.getCedula_pasajero();
+        System.out.println("Cedula pasajero: " + cedulaPasajero);
     }
-    
 }
+
