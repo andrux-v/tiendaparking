@@ -1,15 +1,21 @@
 package Controlador;
 
 import Modelo.ChoferModelo;
+import Vista.vista_chofer;
 
 public class controlador_chofer {
-
-    public String datosRegistrarChofer(String nombre, String apellido, String cedula) {
-        ChoferModelo obj_chofer = new ChoferModelo(nombre, apellido, cedula);
-        
-        return "Chofer registrado correctamente:\n"
-                + "Nombre: " + obj_chofer.getNombre_chofer() + "\n"
-                + "Apellido: " + obj_chofer.getApellido_chofer() + "\n"
-                + "Cedula: " + obj_chofer.getCedula_chofer();
+    public vista_chofer obj_vista;
+    public controlador_chofer (vista_chofer obj_vista){
+        this.obj_vista = obj_vista;
+    }
+    
+    public void procesar_datos(){
+        String dato_nombre = this.obj_vista.tomar_nombre();
+        String dato_licencia = this.obj_vista.tomar_licencia();
+        String dato_cedula = this.obj_vista.tomar_cedula();
+        ChoferModelo obj_chofer = new ChoferModelo (dato_nombre, dato_licencia, dato_cedula);
+        obj_chofer.setNombre_chofer(dato_nombre);
+        obj_chofer.setLicencia_chofer(dato_licencia);
+        obj_chofer.setCedula_chofer(dato_cedula);
     }
 }

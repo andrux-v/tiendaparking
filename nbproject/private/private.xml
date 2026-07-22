@@ -4,9 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/tiendaparking/Tiendaparking.java</file>
-            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/tiendaparking/Chofer_modelo.java</file>
-            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/tiendaparking/Carro_modelo.java</file>
-            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/tiendaparking/Motor_modelo.java</file>
+            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/Controlador/controlador_carro.java</file>
+            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/Modelo/ChoferModelo.java</file>
+            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/Modelo/CarroModelo.java</file>
+            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/Controlador/controlador_chofer.java</file>
+            <file>file:/C:/Users/andre/OneDrive/Documentos/NetBeansProjects/tiendaparking/src/Vista/vista_chofer.java</file>
         </group>
     </open-files>
 </project-private>

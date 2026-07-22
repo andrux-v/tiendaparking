@@ -4,7 +4,7 @@ import Modelo.CarroModelo;
 import Modelo.ChoferModelo;
 import Modelo.MotorModelo;
 import Modelo.PasajeroModelo;
-
+    
 /**
  * Punto de entrada principal de la aplicación TiendaParking.
  */
@@ -21,7 +21,7 @@ public class Tiendaparking {
         
         // Sincronización y uso del Vehículo (CarroModelo)
         CarroModelo carro = new CarroModelo("Mustang", "Negro", "XJH-1010");
-        carro.setPlaca_carro("XJH-1010");
+        carro.setPlaca_carro("XJN-1011");
 
         String placaVehiculo = carro.getPlaca_carro();
         System.out.println("Placa carro: " + placaVehiculo);
