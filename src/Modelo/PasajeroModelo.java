@@ -11,6 +11,19 @@ public class PasajeroModelo {
         this.nombrec_pasajero = dato_nombrec;
     }
 
+    // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
+    public boolean validarPasajero() {
+        if (cedula_pasajero == null || cedula_pasajero.equals("")) {
+            System.out.println("Error: La cédula del pasajero no existe o está vacía.");
+            return false;
+        }
+        if (nombrec_pasajero == null || nombrec_pasajero.equals("")) {
+            System.out.println("Error: El nombre del pasajero no existe o está vacío.");
+            return false;
+        }
+        return true;
+    }
+
     public String getCedula_pasajero() {
         return cedula_pasajero;
     }

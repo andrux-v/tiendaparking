@@ -53,5 +53,4 @@ public class ApiModelo {
     public void buscar_chofer(String info_cedula){
         System.out.println("Cliente se esta buscando...");
     }
-    
 }
