@@ -38,7 +38,7 @@ public class CarroModelo {
         this.placa_carro = placa_carro;
     }
 
-    // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
+    // Regla de negocio: validar que los datos existan 
     public boolean validarCarro() {
         if (marca_carro == null || marca_carro.equals("")) {
             return false;

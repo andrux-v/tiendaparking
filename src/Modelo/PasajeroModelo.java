@@ -11,7 +11,7 @@ public class PasajeroModelo {
         this.nombrec_pasajero = dato_nombrec;
     }
 
-    // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
+    // Regla de negocio: validar que los datos existan 
     public boolean validarPasajero() {
         if (cedula_pasajero == null || cedula_pasajero.equals("")) {
             return false;

@@ -10,7 +10,7 @@ public class MotorModelo {
         this.tipo_motor = dato_tipo;
     }
 
-    // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
+    // Regla de negocio: validar que los datos existan 
     public boolean validarMotor() {
         if (nserie_motor == null || nserie_motor.equals("")) {
             return false;

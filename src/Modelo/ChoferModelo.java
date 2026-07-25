@@ -37,7 +37,7 @@ public class ChoferModelo {
         this.cedula_chofer = cedula_chofer;
     }
 
-    // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
+    // Regla de negocio: validar que los datos existan 
     public boolean validarChofer() {
         if (nombre_chofer == null || nombre_chofer.equals("")) {
             return false;
