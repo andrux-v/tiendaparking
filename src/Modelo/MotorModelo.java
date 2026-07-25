@@ -1,4 +1,3 @@
-
 package Modelo;
 
 public class MotorModelo {
@@ -14,11 +13,9 @@ public class MotorModelo {
     // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
     public boolean validarMotor() {
         if (nserie_motor == null || nserie_motor.equals("")) {
-            System.out.println("Error: El número de serie del motor no existe o está vacío.");
             return false;
         }
         if (tipo_motor == null || tipo_motor.equals("")) {
-            System.out.println("Error: El tipo de motor no existe o está vacío.");
             return false;
         }
         return true;
@@ -48,5 +45,6 @@ public class MotorModelo {
     public void setTipo_motor(String tipo_motor) {
         this.tipo_motor = tipo_motor;
     }
-    
 }
+
+

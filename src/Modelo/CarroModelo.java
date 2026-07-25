@@ -1,3 +1,4 @@
+
 package Modelo;
 
 public class CarroModelo {
@@ -40,27 +41,18 @@ public class CarroModelo {
     // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
     public boolean validarCarro() {
         if (marca_carro == null || marca_carro.equals("")) {
-            System.out.println("Error: La marca del carro no existe o está vacía.");
             return false;
         }
         if (color_carro == null || color_carro.equals("")) {
-            System.out.println("Error: El color del carro no existe o está vacío.");
             return false;
         }
         if (placa_carro == null || placa_carro.equals("")) {
-            System.out.println("Error: La placa del carro no existe o está vacía.");
-
             return false;
         }
         return true;
     }
 
-    public void buscar_placa(String info_placa) {
-        if (this.placa_carro.equalsIgnoreCase(info_placa)) {
-            System.out.println("¡Placa encontrada! Corresponde a la marca: " + marca_carro);
-        } else {
-            System.out.println("La placa no coincide con este carro.");
-        }
+    public boolean buscar_placa(String info_placa) {
+        return this.placa_carro.equalsIgnoreCase(info_placa);
     }
-
 }

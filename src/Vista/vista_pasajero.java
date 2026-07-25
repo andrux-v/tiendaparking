@@ -1,12 +1,14 @@
 package Vista;
 
+import Modelo.PasajeroModelo;
+
 public class vista_pasajero {
     
     public String tomar_cedula() {
         System.out.print("Ingrese cédula del pasajero: ");
         String cedula = Teclado.scanner.next();
         while (!cedula.matches("\\d+")) {
-            System.out.print("Error: La cédula solo debe contener números.\nIngrese cédula del pasajero nuevamente: ");
+            System.out.print("Error: La cédula solo debe contener números (sin puntos, comas ni letras).\nIngrese cédula del pasajero nuevamente: ");
             cedula = Teclado.scanner.next();
         }
         return cedula;
@@ -20,5 +22,11 @@ public class vista_pasajero {
             nombrec = Teclado.scanner.next();
         }
         return nombrec;
+    }
+
+    public void mostrar_info(PasajeroModelo pasajero) {
+        System.out.println("--- Datos del Pasajero ---");
+        System.out.println("Cédula: " + pasajero.getCedula_pasajero());
+        System.out.println("Nombre: " + pasajero.getNombrec_pasajero());
     }
 }

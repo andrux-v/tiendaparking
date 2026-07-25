@@ -1,5 +1,7 @@
 package Vista;
 
+import Modelo.CarroModelo;
+
 public class vista_carro {
     
     public String tomar_marca() {
@@ -31,5 +33,13 @@ public class vista_carro {
         }
         return placa;
     }
+
+    public void mostrar_info(CarroModelo carro) {
+        System.out.println("--- Datos del Carro ---");
+        System.out.println("Marca: " + carro.getMarca_carro());
+        System.out.println("Color: " + carro.getColor_carro());
+        System.out.println("Placa: " + carro.getPlaca_carro());
+    }
 }
+
 

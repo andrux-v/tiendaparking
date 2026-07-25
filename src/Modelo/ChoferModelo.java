@@ -40,15 +40,12 @@ public class ChoferModelo {
     // Regla de negocio: validar que los datos existan (no nulos ni vacíos)
     public boolean validarChofer() {
         if (nombre_chofer == null || nombre_chofer.equals("")) {
-            System.out.println("Error: El nombre del chofer no existe o está vacío.");
             return false;
         }
         if (licencia_chofer == null || licencia_chofer.equals("")) {
-            System.out.println("Error: La licencia del chofer no existe o está vacía.");
             return false;
         }
         if (cedula_chofer == null || cedula_chofer.equals("")) {
-            System.out.println("Error: La cédula del chofer no existe o está vacía.");
             return false;
         }
         return true;

@@ -1,5 +1,7 @@
 package Vista;
 
+import Modelo.ChoferModelo;
+
 public class vista_chofer {
     
     public String tomar_nombre() {
@@ -30,5 +32,12 @@ public class vista_chofer {
             cedula = Teclado.scanner.next();
         }
         return cedula;
+    }
+
+    public void mostrar_info(ChoferModelo chofer) {
+        System.out.println("--- Datos del Chofer ---");
+        System.out.println("Nombre: " + chofer.getNombre_chofer());
+        System.out.println("Licencia: " + chofer.getLicencia_chofer());
+        System.out.println("Cédula: " + chofer.getCedula_chofer());
     }
 }

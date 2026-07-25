@@ -46,11 +46,12 @@ public class ApiModelo {
         }
     }
     
-    public void desconexion(){
-        System.out.println("Desconexion realizada..."); 
+    public boolean desconexion(){
+        return true;
     }
     
-    public void buscar_chofer(String info_cedula){
-        System.out.println("Cliente se esta buscando...");
+    public boolean buscar_chofer(String info_cedula){
+        return true;
     }
 }
+

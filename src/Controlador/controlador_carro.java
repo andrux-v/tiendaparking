@@ -19,6 +19,7 @@ public class controlador_carro {
         String dato_color = this.obj_vista.tomar_color();
         String dato_placa = this.obj_vista.tomar_placa();
         CarroModelo obj_carro = new CarroModelo(dato_marca, dato_color, dato_placa);
+        this.obj_vista.mostrar_info(obj_carro);
         return obj_carro;
     }
 }

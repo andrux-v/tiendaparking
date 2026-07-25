@@ -18,7 +18,7 @@ public class controlador_pasajero {
         String dato_cedula = this.obj_vista.tomar_cedula();
         String dato_nombrec = this.obj_vista.tomar_nombrec();
         PasajeroModelo obj_pasajero = new PasajeroModelo(dato_cedula, dato_nombrec);
+        this.obj_vista.mostrar_info(obj_pasajero);
         return obj_pasajero;
     }
 }
-

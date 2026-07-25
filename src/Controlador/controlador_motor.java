@@ -18,7 +18,9 @@ public class controlador_motor {
         String dato_nserie = this.obj_vista.tomar_nserie();
         String dato_tipo = this.obj_vista.tomar_tipo();
         MotorModelo obj_motor = new MotorModelo(dato_nserie, dato_tipo);
+        this.obj_vista.mostrar_info(obj_motor);
         return obj_motor;
     }
 }
+
 

@@ -1,5 +1,7 @@
 package Vista;
 
+import Modelo.MotorModelo;
+
 public class vista_motor {
     
     public String tomar_nserie() {
@@ -24,4 +26,11 @@ public class vista_motor {
         }
         return tipo;
     }
+
+    public void mostrar_info(MotorModelo motor) {
+        System.out.println("--- Datos del Motor ---");
+        System.out.println("N° Serie: " + motor.getNserie_motor());
+        System.out.println("Tipo: " + motor.getTipo_motor());
+    }
 }
+
