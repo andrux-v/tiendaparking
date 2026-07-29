@@ -7,8 +7,8 @@ public class vista_chofer {
     public String tomar_nombre() {
         System.out.print("Ingrese nombre del chofer: ");
         String nombre = Teclado.scanner.next();
-        while (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ]+")) {
-            System.out.print("Error: El nombre solo debe contener letras.\nIngrese nombre del chofer nuevamente: ");
+        while (!nombre.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+")) {
+            System.out.print("Error: El nombre solo debe contener letras o espacios.\nIngrese nombre del chofer nuevamente: ");
             nombre = Teclado.scanner.next();
         }
         return nombre;

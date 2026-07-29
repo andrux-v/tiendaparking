@@ -27,10 +27,25 @@ public class vista_motor {
         return tipo;
     }
 
+    public String tomar_cilindraje() {
+        System.out.print("Ingrese cilindraje del motor (solo números): ");
+        String cilindraje = Teclado.scanner.next();
+        while (!cilindraje.matches("[0-9]+")) {
+            System.out.print("Error: El cilindraje solo debe contener números.\nIngrese cilindraje del motor nuevamente: ");
+            cilindraje = Teclado.scanner.next();
+        }
+        return cilindraje;
+    }
+
     public void mostrar_info(MotorModelo motor) {
         System.out.println("--- Datos del Motor ---");
         System.out.println("N° Serie: " + motor.getNserie_motor());
         System.out.println("Tipo: " + motor.getTipo_motor());
+        System.out.println("Cilindraje: " + motor.getCilindraje());
     }
 }
+
+
+
+
 
