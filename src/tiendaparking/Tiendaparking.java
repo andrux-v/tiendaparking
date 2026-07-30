@@ -9,7 +9,9 @@ public class Tiendaparking {
         vista_general vistaGeneral = new vista_general();
         controlador_general ctrlGeneral = new controlador_general(vistaGeneral);
 
-        ctrlGeneral.registrarTodo();
+        ctrlGeneral.iniciarSistema();
     }
 }
+
+
 

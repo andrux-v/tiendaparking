@@ -17,4 +17,9 @@ public class vista_general {
     public void mostrarTitulo(String titulo) {
         System.out.println("\n=== " + titulo + " ===");
     }
+
+    public void mostrarInformacion(String info) {
+        System.out.println("\n=== REGISTROS GUARDADOS EN LA API ===");
+        System.out.println(info);
+    }
 }
