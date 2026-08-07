@@ -1,12 +1,18 @@
 package Controlador;
 
-import Vista.vista_general;
+import Interfaces.VistaControl;
+import Interfaces.VistaChofer;
+import Interfaces.VistaCarro;
+import Interfaces.VistaMotor;
+import Interfaces.VistaPasajero;
 import Modelo.ApiModelo;
-
+import javax.swing.JOptionPane;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class controlador_general {
     
-    public vista_general objVistaGeneral;
+    public VistaControl vistaControl;
     private ApiModelo api;
     
     public controlador_chofer ctrlChofer;
@@ -14,59 +20,54 @@ public class controlador_general {
     public controlador_motor ctrlMotor;
     public controlador_pasajero ctrlPasajero;
 
-    public controlador_general(vista_general objVistaGeneral) {
-        this.objVistaGeneral = objVistaGeneral;
-        
-        this.ctrlChofer = new controlador_chofer(this.objVistaGeneral.vistaChofer);
-        this.ctrlCarro = new controlador_carro(this.objVistaGeneral.vistaCarro);
-        this.ctrlMotor = new controlador_motor(this.objVistaGeneral.vistaMotor);
-        this.ctrlPasajero = new controlador_pasajero(this.objVistaGeneral.vistaPasajero);
+    public controlador_general(VistaControl vistaControl, VistaChofer vistaChofer, VistaCarro vistaCarro, VistaMotor vistaMotor, VistaPasajero vistaPasajero) {
+        this.vistaControl = vistaControl;
         
         // Inicializando la "Base de Datos" (API)
         this.api = new ApiModelo("localhost", "root", "1234");
+
+        this.ctrlChofer = new controlador_chofer(vistaChofer, this.api, this.vistaControl);
+        this.ctrlCarro = new controlador_carro(vistaCarro, this.api, this.vistaControl);
+        this.ctrlMotor = new controlador_motor(vistaMotor, this.api, this.vistaControl);
+        this.ctrlPasajero = new controlador_pasajero(vistaPasajero, this.api, this.vistaControl);
+        
+        // Configurar botones de VistaControl
+        this.vistaControl.getJButton1().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaChofer.setLocationRelativeTo(null);
+                vistaChofer.setVisible(true);
+                vistaControl.setVisible(false);
+            }
+        });
+        this.vistaControl.getJButton2().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaCarro.setLocationRelativeTo(null);
+                vistaCarro.setVisible(true);
+                vistaControl.setVisible(false);
+            }
+        });
+        this.vistaControl.getJButton3().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaMotor.setLocationRelativeTo(null);
+                vistaMotor.setVisible(true);
+                vistaControl.setVisible(false);
+            }
+        });
+        this.vistaControl.getJButton4().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                vistaPasajero.setLocationRelativeTo(null);
+                vistaPasajero.setVisible(true);
+                vistaControl.setVisible(false);
+            }
+        });
     }
 
     public void iniciarSistema() {
-        boolean salir = false;
-        while (!salir) {
-            System.out.println("\n===== MENÚ PRINCIPAL =====");
-            System.out.println("1. Registrar Chofer");
-            System.out.println("2. Registrar Carro");
-            System.out.println("3. Registrar Motor");
-            System.out.println("4. Registrar Pasajero");
-            System.out.println("5. Mostrar Registros Guardados");
-            System.out.println("6. Salir");
-            System.out.print("Elige una opción: ");
-            
-            String opcionStr = Vista.Teclado.scanner.next();
-            
-            switch (opcionStr) {
-                case "1":
-                    this.objVistaGeneral.mostrarTitulo("REGISTRO DE CHOFER");
-                    this.api.agregarChofer(this.ctrlChofer.registrarChofer());
-                    break;
-                case "2":
-                    this.objVistaGeneral.mostrarTitulo("REGISTRO DE CARRO");
-                    this.api.agregarCarro(this.ctrlCarro.registrarCarro());
-                    break;
-                case "3":
-                    this.objVistaGeneral.mostrarTitulo("REGISTRO DE MOTOR");
-                    this.api.agregarMotor(this.ctrlMotor.registrarMotor());
-                    break;
-                case "4":
-                    this.objVistaGeneral.mostrarTitulo("REGISTRO DE PASAJERO");
-                    this.api.agregarPasajero(this.ctrlPasajero.registrarPasajero());
-                    break;
-                case "5":
-                    this.objVistaGeneral.mostrarInformacion(this.api.obtenerTodosLosRegistros());
-                    break;
-                case "6":
-                    salir = true;
-                    System.out.println("Saliendo del sistema...");
-                    break;
-                default:
-                    System.out.println("Opción no válida. Intenta de nuevo.");
-            }
-        }
+        this.vistaControl.setLocationRelativeTo(null);
+        this.vistaControl.setVisible(true);
     }
 }

@@ -18,6 +18,13 @@ public class VistaMotor extends javax.swing.JFrame {
     public VistaMotor() {
         initComponents();
     }
+    
+    public javax.swing.JButton getJButton1() { return jButton1; }
+    public javax.swing.JButton getJButton2() { return jButton2; }
+    public javax.swing.JButton getJButton3() { return jButton3; }
+    public javax.swing.JTextField getJTextField1() { return jTextField1; }
+    public javax.swing.JTextField getJTextField2() { return jTextField2; }
+    public javax.swing.JTextField getJTextField3() { return jTextField3; }
 
     /**
      * This method is called from within the constructor to initialize the form.
